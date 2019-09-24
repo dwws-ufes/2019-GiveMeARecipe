@@ -1,2 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015"/>
+<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <compose xsi:type="frameweb:EntityModel" name="Entity Model">
+    <packagedElement xsi:type="frameweb:DomainPackage" name="Entity Package">
+      <packagedElement xsi:type="frameweb:DomainClass" name="Ingredient">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Recipe"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Food"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Step">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="description" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="number" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Portion">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="size" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Float"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="unit" visibility="private" type="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+      </packagedElement>
+      <packagedElement xsi:type="uml:Enumeration" name="UnitOfMeasure">
+        <ownedLiteral name="centimeter" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="cup" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="deciliter" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="fluid_ounce" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="gallon" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="gill" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="gram" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="inch" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="kilogram" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="liter" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="meter" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="milliliter" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="millimeter&#xA;" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="milligram" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="ounce" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="pint" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="pound" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="quart" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="tablespoon" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="teaspoon" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+        <ownedLiteral name="unit" classifier="//@compose.0/Entity%20Package/UnitOfMeasure"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="StepsOfRecipe" memberEnd="//@compose.0/Entity%20Package/StepsOfRecipe/Source //@compose.0/Entity%20Package/StepsOfRecipe/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/StepsOfRecipe/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/StepsOfRecipe/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/StepsOfRecipe"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Recipe" association="//@compose.0/Entity%20Package/StepsOfRecipe"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Step" association="//@compose.0/Entity%20Package/StepsOfRecipe">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="IngredientContainer"/>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="IngredientOfContainer" memberEnd="//@compose.0/Entity%20Package/IngredientOfContainer/Source //@compose.0/Entity%20Package/IngredientOfContainer/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientOfContainer/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientOfContainer/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientOfContainer"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/IngredientContainer" association="//@compose.0/Entity%20Package/IngredientOfContainer">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Ingredient" association="//@compose.0/Entity%20Package/IngredientOfContainer"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="PortionOfContainer" memberEnd="//@compose.0/Entity%20Package/PortionOfContainer/Source //@compose.0/Entity%20Package/PortionOfContainer/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/PortionOfContainer/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/PortionOfContainer/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/PortionOfContainer"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/IngredientContainer" association="//@compose.0/Entity%20Package/PortionOfContainer"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Portion" association="//@compose.0/Entity%20Package/PortionOfContainer"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="IngredientContainerOfRecipe" memberEnd="//@compose.0/Entity%20Package/IngredientContainerOfRecipe/Source //@compose.0/Entity%20Package/IngredientContainerOfRecipe/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientContainerOfRecipe/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientContainerOfRecipe/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientContainerOfRecipe"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Recipe" association="//@compose.0/Entity%20Package/IngredientContainerOfRecipe"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/IngredientContainer" association="//@compose.0/Entity%20Package/IngredientContainerOfRecipe">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+  </compose>
+</frameweb:FramewebProject>
