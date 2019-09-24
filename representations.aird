@@ -1,13 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description" uid="_hQyeMF00Eem7Q4kk1okOFA" selectedViews="_vdAFQF00Eem7Q4kk1okOFA" version="14.1.0.201810161215">
-  <semanticResources>Model.frameweb</semanticResources>
-  <semanticResources>Configuration.frameweb</semanticResources>
-  <semanticResources>frameweb/Java.frameweb</semanticResources>
-  <semanticResources>frameweb/jbutler/ApplicationModel_JButler_CDI.frameweb</semanticResources>
-  <semanticResources>frameweb/jbutler/EntityModel_JButler_JPA.frameweb</semanticResources>
-  <semanticResources>frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb</semanticResources>
-  <semanticResources>frameweb/jbutler/PersistenceModel_JButler.frameweb</semanticResources>
-  <ownedViews xmi:type="viewpoint:DView" uid="_vdAFQF00Eem7Q4kk1okOFA">
-    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']"/>
-  </ownedViews>
-</viewpoint:DAnalysis>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_hQyeMF00Eem7Q4kk1okOFA" selectedViews="_vdAFQF00Eem7Q4kk1okOFA" version="14.1.0.201810161215">
+    <semanticResources>Model.frameweb</semanticResources>
+    <semanticResources>Configuration.frameweb</semanticResources>
+    <semanticResources>frameweb/Java.frameweb</semanticResources>
+    <semanticResources>frameweb/jbutler/ApplicationModel_JButler_CDI.frameweb</semanticResources>
+    <semanticResources>frameweb/jbutler/EntityModel_JButler_JPA.frameweb</semanticResources>
+    <semanticResources>frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb</semanticResources>
+    <semanticResources>frameweb/jbutler/PersistenceModel_JButler.frameweb</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_vdAFQF00Eem7Q4kk1okOFA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KBX5cN5mEemAzoztSIRbYA" name="2019-GiveMeARecipe" repPath="#_JwLbwN5mEemAzoztSIRbYA">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']"/>
+        <target xmi:type="frameweb:FramewebProject" href="Model.frameweb#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_JwLbwN5mEemAzoztSIRbYA" name="2019-GiveMeARecipe">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_KBRLwN5mEemAzoztSIRbYA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_KBRy0N5mEemAzoztSIRbYA"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_KB3osN5mEemAzoztSIRbYA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_KB3osd5mEemAzoztSIRbYA" type="Sirius" element="_JwLbwN5mEemAzoztSIRbYA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_KCPcIN5mEemAzoztSIRbYA" type="2002" element="_KBB7MN5mEemAzoztSIRbYA">
+          <children xmi:type="notation:Node" xmi:id="_KCYmEN5mEemAzoztSIRbYA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_KCabQN5mEemAzoztSIRbYA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_KCabQd5mEemAzoztSIRbYA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_KCabQt5mEemAzoztSIRbYA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_KCPcId5mEemAzoztSIRbYA" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCPcIt5mEemAzoztSIRbYA"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_KCi-IN5mEemAzoztSIRbYA" type="2002" element="_KBNhYN5mEemAzoztSIRbYA">
+          <children xmi:type="notation:Node" xmi:id="_KCjlMN5mEemAzoztSIRbYA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_KCjlMd5mEemAzoztSIRbYA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_KCjlMt5mEemAzoztSIRbYA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_KCjlM95mEemAzoztSIRbYA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_KCi-Id5mEemAzoztSIRbYA" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCi-It5mEemAzoztSIRbYA" x="210"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_KCjlNN5mEemAzoztSIRbYA" type="2002" element="_KBNhY95mEemAzoztSIRbYA">
+          <children xmi:type="notation:Node" xmi:id="_KCkMQN5mEemAzoztSIRbYA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_KCkMQd5mEemAzoztSIRbYA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_KCkMQt5mEemAzoztSIRbYA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_KCkMQ95mEemAzoztSIRbYA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_KCjlNd5mEemAzoztSIRbYA" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCjlNt5mEemAzoztSIRbYA" x="420"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_KCkMRN5mEemAzoztSIRbYA" type="2002" element="_KBOIcd5mEemAzoztSIRbYA">
+          <children xmi:type="notation:Node" xmi:id="_KCkzUN5mEemAzoztSIRbYA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_KCkzUd5mEemAzoztSIRbYA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_KCkzUt5mEemAzoztSIRbYA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_KCkzU95mEemAzoztSIRbYA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_KCkMRd5mEemAzoztSIRbYA" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCkMRt5mEemAzoztSIRbYA" x="721"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_KClaYN5mEemAzoztSIRbYA" type="2002" element="_KBOIdN5mEemAzoztSIRbYA">
+          <children xmi:type="notation:Node" xmi:id="_KCmBcN5mEemAzoztSIRbYA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_KCmBcd5mEemAzoztSIRbYA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_KCmBct5mEemAzoztSIRbYA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_KCmBc95mEemAzoztSIRbYA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_KClaYd5mEemAzoztSIRbYA" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KClaYt5mEemAzoztSIRbYA" x="994"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_KCmogN5mEemAzoztSIRbYA" type="2002" element="_KBOvgN5mEemAzoztSIRbYA">
+          <children xmi:type="notation:Node" xmi:id="_KCnPkN5mEemAzoztSIRbYA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_KCnPkd5mEemAzoztSIRbYA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_KCnPkt5mEemAzoztSIRbYA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_KCnPk95mEemAzoztSIRbYA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_KCmogd5mEemAzoztSIRbYA" fontName="Cantarell" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCmogt5mEemAzoztSIRbYA" x="1351"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_KB3ost5mEemAzoztSIRbYA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_KBB7MN5mEemAzoztSIRbYA" name="Java">
+      <target xmi:type="frameweb:EntityModel" href="frameweb/Java.frameweb#//@compose.0"/>
+      <semanticElements xmi:type="frameweb:EntityModel" href="frameweb/Java.frameweb#//@compose.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KBHawN5mEemAzoztSIRbYA" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='EntityModel']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='EntityModel']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_KBNhYN5mEemAzoztSIRbYA" name="FrameWeb Configuration">
+      <target xmi:type="frameweb:FrameWebConfiguration" href="Configuration.frameweb#//@configures.0"/>
+      <semanticElements xmi:type="frameweb:FrameWebConfiguration" href="Configuration.frameweb#//@configures.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KBNhYd5mEemAzoztSIRbYA" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif" borderSize="1" borderSizeComputationExpression="1" foregroundColor="114,159,207">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_KBNhY95mEemAzoztSIRbYA" name="JButler Application Model Configuration (CDI)">
+      <target xmi:type="frameweb:DITemplate" href="frameweb/jbutler/ApplicationModel_JButler_CDI.frameweb#//@configures.0"/>
+      <semanticElements xmi:type="frameweb:DITemplate" href="frameweb/jbutler/ApplicationModel_JButler_CDI.frameweb#//@configures.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KBNhZN5mEemAzoztSIRbYA" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif" borderSize="1" borderSizeComputationExpression="1" foregroundColor="114,159,207">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_KBOIcd5mEemAzoztSIRbYA" name="JButler Entity Model Configuration (JPA)">
+      <target xmi:type="frameweb:ORMTemplate" href="frameweb/jbutler/EntityModel_JButler_JPA.frameweb#//@configures.0"/>
+      <semanticElements xmi:type="frameweb:ORMTemplate" href="frameweb/jbutler/EntityModel_JButler_JPA.frameweb#//@configures.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KBOIct5mEemAzoztSIRbYA" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif" borderSize="1" borderSizeComputationExpression="1" foregroundColor="114,159,207">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_KBOIdN5mEemAzoztSIRbYA" name="JButler Navigation Model Configuration (JSF/PrimeFaces)">
+      <target xmi:type="frameweb:FrontControllerTemplate" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0"/>
+      <semanticElements xmi:type="frameweb:FrontControllerTemplate" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KBOIdd5mEemAzoztSIRbYA" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif" borderSize="1" borderSizeComputationExpression="1" foregroundColor="114,159,207">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_KBOvgN5mEemAzoztSIRbYA" name="JButler Persistence Model Configuration">
+      <target xmi:type="frameweb:DAOTemplate" href="frameweb/jbutler/PersistenceModel_JButler.frameweb#//@configures.0"/>
+      <semanticElements xmi:type="frameweb:DAOTemplate" href="frameweb/jbutler/PersistenceModel_JButler.frameweb#//@configures.0"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_KBOvgd5mEemAzoztSIRbYA" iconPath="/org.eclipse.uml2.uml.edit/icons/full/obj16/Package.gif" borderSize="1" borderSizeComputationExpression="1" foregroundColor="114,159,207">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='FrameworkProfile']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_JwYQEN5mEemAzoztSIRbYA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer"/>
+    <target xmi:type="frameweb:FramewebProject" href="Model.frameweb#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
