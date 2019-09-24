@@ -7,8 +7,17 @@
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedAttribute>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainClass" name="Recipe"/>
-      <packagedElement xsi:type="frameweb:DomainClass" name="Food"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Recipe">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="calories" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Float"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="ready_in_minutes" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="servings" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Step">
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="description" visibility="private">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
@@ -55,7 +64,11 @@
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainClass" name="IngredientContainer"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="IngredientContainer">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="ingredient_condition" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="IngredientOfContainer" memberEnd="//@compose.0/Entity%20Package/IngredientOfContainer/Source //@compose.0/Entity%20Package/IngredientOfContainer/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientOfContainer/Source"/>
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/IngredientOfContainer/Target"/>
@@ -80,6 +93,42 @@
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Recipe" association="//@compose.0/Entity%20Package/IngredientContainerOfRecipe"/>
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/IngredientContainer" association="//@compose.0/Entity%20Package/IngredientContainerOfRecipe">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Category">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="name" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="CategoriesOfRecipe" memberEnd="//@compose.0/Entity%20Package/CategoriesOfRecipe/Source //@compose.0/Entity%20Package/CategoriesOfRecipe/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/CategoriesOfRecipe/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/CategoriesOfRecipe/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/CategoriesOfRecipe"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Recipe" association="//@compose.0/Entity%20Package/CategoriesOfRecipe">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Category" association="//@compose.0/Entity%20Package/CategoriesOfRecipe">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Rating">
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="number_of_votes" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="value" visibility="private">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/Float"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="RatingOfRecipe" memberEnd="//@compose.0/Entity%20Package/RatingOfRecipe/Source //@compose.0/Entity%20Package/RatingOfRecipe/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/RatingOfRecipe/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/RatingOfRecipe/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/RatingOfRecipe"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Recipe" association="//@compose.0/Entity%20Package/RatingOfRecipe">
+          <lowerValue xsi:type="uml:LiteralInteger" value="1"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Rating" association="//@compose.0/Entity%20Package/RatingOfRecipe">
+          <lowerValue xsi:type="uml:LiteralInteger"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
