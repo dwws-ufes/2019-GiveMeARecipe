@@ -1,0 +1,80 @@
+﻿@model RecipesViewModel
+
+@if (@Model.Recipes.Any())
+{
+    @foreach (var recipe in @Model.Recipes)
+    {
+        <div class="card mt-5" style="max-height: 250px;">
+            <div class="row no-gutters">
+                <div class="col-4 embed-responsive embed-responsive-16by9">
+                    <img src="@($"/images/{recipe.Picture}")" class="card-img embed-responsive-item" style="object-fit: cover;" alt="@recipe.Picture">
+                </div>
+                <div class="col-8">
+                    <div class="card-body">
+                        <small class="float-right text-muted">
+                            <span class="mr-2">
+                                <i class="fas fa-circle"></i>
+                                @{
+                                    switch (recipe.Difficulty)
+                                    {
+                                        case 1:
+                                            <i class="far fa-circle"></i>
+                                            <i class="far fa-circle mr-1"></i><span>Easy</span>
+                                            break;
+                                        case 2:
+                                            <i class="fas fa-circle"></i>
+                                            <i class="far fa-circle mr-1"></i><span>Average</span>
+                                            break;
+                                        case 3:
+                                            <i class="fas fa-circle"></i>
+                                            <i class="fas fa-circle mr-1"></i><span>Difficult</span>
+                                            break;
+                                    }
+                                }
+                            </span>
+                            <span class="mr-2"><i class="fas fa-drumstick-bite mr-1"></i>@recipe.Servings</span>
+                            <span><i class="fas fa-clock mr-1"></i>@recipe.Time</span>
+                        </small>
+                        <h5 class="card-title"><a asp-controller="Recipes" asp-action="Show" asp-route-id="@recipe.RecipeId">@recipe.Name</a></h5>
+                        <p class="card-text">@recipe.Description</p>
+                        <div class="row no-gutters">
+                            <div class="col-6">
+                                <small class="text-muted">
+                                    Contained Ingredients:&nbsp;
+                                    @foreach (var ingredient in recipe.Ingredients)
+                                    {
+                                        <span class="badge badge-secondary">@ingredient</span>
+                                    }
+                                </small>
+                            </div>
+                            <div class="col-6">
+                                <div class="float-right">
+                                    @for (var i = 1; i <= 5; i++)
+                                    {
+                                        if (i <= recipe.Evaluation)
+                                        {
+                                            <i class="fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="far fa-star"></i>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+                            }
+else
+{
+    <div class="alert alert-warning mt-5 text-center">
+        <h4 class="alert-heading">No recipes found!</h4>
+        <p>Unfortunately we couldn't find any recipes that could be prepared with the above ingredients.</p>
+        <hr>
+        <p class="mb-0">Select other ingredients in the field above to perform another search.</p>
+    </div>
+}
