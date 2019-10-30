@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>e1527049-b76a-4e31-a1c8-8b02418437d4</ProjectGuid>
+    <ProjectGuid>24c1f668-9a66-45bf-86f5-4593b0ac80ce</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
     <DockerServiceName>givemearecipe</DockerServiceName>
