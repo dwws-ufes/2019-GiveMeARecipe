@@ -1,0 +1,5 @@
+﻿@model ReviewViewModel
+
+<form asp-controller="Reviews" asp-action="Delete" asp-route-id="@Model.RecipeId" method="post">
+    <button type="submit" class="btn btn-danger float-right">Delete</button> 
+</form>

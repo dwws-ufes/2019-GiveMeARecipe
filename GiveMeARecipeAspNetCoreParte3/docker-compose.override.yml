@@ -1,0 +1,26 @@
+version: '3.4'
+
+networks: 
+  dockersql-network:
+    driver: bridge
+
+services:
+  givemearecipe:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "5000:80"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+  sqlserver:
+    hostname: 'sqlserver'
+    environment:
+      - SA_PASSWORD=Asdf1234_
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    expose:
+      - 1433

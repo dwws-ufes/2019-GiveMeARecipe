@@ -1,0 +1,47 @@
+﻿@model RecipesViewModel
+
+@if (@Model.Recipes.Any())
+{
+    @foreach (var recipe in @Model.Recipes)
+    {
+        <div class="card mt-5" style="max-height: 500px;">
+            <div class="row no-gutters">
+                <div class="col-4 embed-responsive embed-responsive-16by9">
+                    <img src="@(recipe.Picture)" class="card-img embed-responsive-item" style="object-fit: cover;" alt="@recipe.Picture">
+                </div>
+                <div class="col-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><a asp-controller="Recipes" asp-action="Show" asp-route-id="@recipe.RecipeId">@recipe.Name</a></h5>
+                        <p class="card-text">@recipe.Description</p>
+                        <div class="row no-gutters">
+                            <div class="offset-6 col-6">
+                                <div class="float-right">
+                                    @for (var i = 1; i <= 5; i++)
+                                    {
+                                        if (i <= recipe.Evaluation)
+                                        {
+                                            <i class="fas fa-star"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="far fa-star"></i>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+                            }
+else
+{
+    <div class="alert alert-warning mt-5 text-center">
+        <h4 class="alert-heading">No recipes found!</h4>
+        <p>Unfortunately we couldn't find any recipes that could be prepared with the above ingredients.</p>
+        <hr>
+        <p class="mb-0">Select other ingredients in the field above to perform another search.</p>
+    </div>
+}

@@ -1,0 +1,153 @@
+﻿@model RecipeViewModel
+
+@section Styles {
+    <link rel="stylesheet" href="~/lib/kartik-v-bootstrap-star-rating/dist/css/star-rating.min.css" />
+    <link rel="stylesheet" href="~/lib/kartik-v-bootstrap-star-rating/dist/css/theme.min.css" />
+}
+
+<div class="row">
+    <div class="col-4 embed-responsive embed-responsive-16by9">
+        <img src="@(@Model.Picture)" class="embed-responsive-item rounded" style="object-fit: cover;" alt="@Model.Picture">
+    </div>
+    <div class="col-8">
+        <h1>@Model.Name</h1>
+        <p>@Model.Description</p>
+        @{
+            await Html.RenderPartialAsync("../FavoritedRecipes/_FavoritedRecipePartial.cshtml", new FavoritedRecipeViewModel { FavoritedRecipe = Model.FavoritedRecipe, RecipeId = Model.RecipeId });
+        }
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    @for (var i = 1; i <= 5; i++)
+    {
+        if (i <= @Model.Evaluation)
+        {
+            <i class="fas fa-star fa-2x"></i>
+        }
+        else
+        {
+            <i class="far fa-star fa-2x"></i>
+        }
+    }
+</div>
+
+@if (TempData["error_message"] is string error_message)
+{
+    <div class="alert alert-danger text-center mt-3" role="alert">
+        <h4 class="alert-heading">Error!</h4>
+        <p class="mb-0">@error_message</p>
+    </div>
+}
+
+@if (TempData["success_message"] is string success_message)
+{
+    <div class="alert alert-success text-center mt-3" role="alert">
+        <h4 class="alert-heading">Success!</h4>
+        <p class="mb-0">@success_message</p>
+    </div>
+}
+
+<hr />
+
+<div class="row mt-5">
+    <div class="col-6">
+        <h3>Categories</h3>
+        <ul>
+            @foreach (var category in Model.Categories)
+            {
+                <li>@category</li>
+            }
+        </ul>
+    </div>
+    <div class="col-6">
+        <h3>Ingredients</h3>
+        <ul>
+            @foreach (var ingredient in Model.Ingredients)
+            {
+                <li>@ingredient</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-12">
+        @if (User.Identity.IsAuthenticated)
+        {
+            if (!Model.UserHasReview)
+            {
+                <div class="row">
+                    <div class="col-8">
+                        <h3>Leave a Review</h3>
+                        @{
+                            await Html.RenderPartialAsync("../Reviews/_CreateFormPartial.cshtml", new ReviewViewModel { RecipeId = Model.RecipeId });
+                        }
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-info text-center" role="alert">
+                <h4 class="alert-heading">Login to Review!</h4>
+                <p>In order to leave a comment and rate this recipe you need to <a href="@($"/Identity/Account/Login?returnUrl={Context.Request.Path}")"><b>log in</b></a>.</p>
+                <hr />
+                <p class="mb-0">If you don't have an account, you can make one <a href="/Identity/Account/Register"><b>here</b></a>!</p>
+            </div>
+        }
+
+        <h3 class="mt-5">Reviews</h3>
+        @if (Model.Reviews != null && Model.Reviews.Any())
+        {
+            @foreach (var review in Model.Reviews)
+            {
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="float-right">
+                            @for (var i = 1; i <= 5; i++)
+                            {
+                                if (i <= review.Evaluation)
+                                {
+                                    <i class="fas fa-star"></i>
+                                }
+                                else
+                                {
+                                    <i class="far fa-star"></i>
+                                }
+                            }
+                        </div>
+                        <div class="card-title"><strong>@review.UserName</strong></div>
+                        <small>@review.Date</small>
+                        <hr />
+                        <div class="card-text">@review.Comment</div>
+
+                        @if (review.CurrentUserReview)
+                        {
+                            await Html.RenderPartialAsync("../Reviews/_DeleteFormPartial.cshtml", new ReviewViewModel { RecipeId = Model.RecipeId });
+                        }
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="alert alert-info text-center" role="alert">
+                <p class="mb-0">There are no reviews for this recipe yet.</p>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/kartik-v-bootstrap-star-rating/dist/js/star-rating.min.js"></script>
+    <script src="~/lib/kartik-v-bootstrap-star-rating/dist/js/theme.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#recipe-rating').rating({
+                step: 1,
+                theme: 'krajee-fas'
+            });
+        });
+    </script>
+}

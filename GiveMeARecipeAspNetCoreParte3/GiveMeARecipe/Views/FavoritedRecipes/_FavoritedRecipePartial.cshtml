@@ -1,0 +1,23 @@
+﻿@model FavoritedRecipeViewModel
+
+@if (User.Identity.IsAuthenticated)
+{
+    if (Model.FavoritedRecipe)
+    {
+        <form asp-controller="FavoritedRecipes" asp-action="Delete" method="post">
+            <input type="hidden" asp-for="RecipeId" value="@Model.RecipeId" />
+            <button type="submit" class="btn btn-light"><i class="fas fa-heart fa-2x mr-3"></i>Unfavorite</button>
+        </form>
+    }
+    else
+    {
+        <form asp-controller="FavoritedRecipes" asp-action="Create" method="post">
+            <input type="hidden" asp-for="RecipeId" value="@Model.RecipeId" />
+            <button type="submit" class="btn btn-light"><i class="far fa-heart fa-2x mr-3"></i>Favorite</button>
+        </form>
+    }
+}
+else
+{
+    <span><i class="far fa-heart fa-2x mr-3"></i><a href="@($"/Identity/Account/Login?returnUrl={Context.Request.Path}")"><b>Log in</b></a> to favorite this recipe!</span>
+}

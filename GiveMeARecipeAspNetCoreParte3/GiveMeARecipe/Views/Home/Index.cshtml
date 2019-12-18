@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IndexViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Give Me a Recipe</h1>
+    <p>Find recipes according to what you have at home!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12 mt-5 text-center">
+        <form asp-controller="Recipes" asp-action="ShowAll" data-ajax="true" data-ajax-method="get" data-ajax-update="#ajax-container" data-ajax-loading="#spinner">
+            <select id="ingredients" class="w-100" asp-for="IngredientsUris" multiple="multiple"></select>
+            <hr />
+            <h5>Filter by</h5>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <select id="categories" class="w-100" asp-for="CategoriesUris" multiple="multiple"></select>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    Rating*:
+                    <input class="radio-filter" asp-for="Rating" type="radio" value="1" /> 1
+                    <input class="radio-filter" asp-for="Rating" type="radio" value="2" /> 2
+                    <input class="radio-filter" asp-for="Rating" type="radio" value="3" /> 3
+                    <input class="radio-filter" asp-for="Rating" type="radio" value="4" /> 4
+                    <input class="radio-filter" asp-for="Rating" type="radio" value="5" /> 5
+                    <p><small class="text-muted">* Bigger than the selected value</small></p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <button id="btn-clear" type="button" class="btn btn-secondary float-right">Clear</button>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success mt-5">Get Recipes!</button>
+        </form>
+    </div>
+
+    <div class="col-12">
+        <div class="mt-5 text-center">
+            <span id="spinner" style="display:none;"><i class="fas fa-spinner fa-spin fa-4x"></i></span>
+        </div>
+        
+        <div id="ajax-container"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#categories').select2({
+                placeholder: "Categories",
+                allowClear: true,
+                ajax: {
+                    url: '/categories',
+                    dataType: 'json',
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    }
+                }
+            });
+
+            $('#btn-clear').click(function() {
+                $('.radio-filter').prop('checked', false);
+
+                $('#categories').val('').trigger('change');
+            });
+
+            $('#ingredients').select2({
+                placeholder: "Select your ingredients",
+                allowClear: true,
+                ajax: {
+                    url: '/ingredients',
+                    dataType: 'json',
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    }
+                }
+            });
+        });
+    </script>
+}

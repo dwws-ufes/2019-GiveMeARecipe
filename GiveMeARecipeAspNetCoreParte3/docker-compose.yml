@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  givemearecipe:
+    image: ${DOCKER_REGISTRY-}givemearecipe
+    build:
+      context: .
+      dockerfile: GiveMeARecipe/Dockerfile
+    networks:
+      - dockersql-network
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    container_name: sqlserver
+    image: microsoft/mssql-server-linux:2017-latest
+    networks:
+      - dockersql-network
